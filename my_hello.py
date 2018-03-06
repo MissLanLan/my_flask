@@ -1,9 +1,10 @@
 from flask import Flask
-from flask_script import Manager
+from flask_script import Manager,Server
 
 app = Flask(__name__)
 
 manager = Manager(app)
+manager.add_command("runserver",Server(use_debugger=True))
 
 
 @app.route('/')
